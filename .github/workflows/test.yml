@@ -1,11 +1,13 @@
-name: Manual workflow
+name: Mass Issue
 
 on:
   workflow_dispatch:
     inputs:
-      name:
-        description: 'Person to greet'
-        default: 'World'
+      issue_title:
+        description: 'Issue Title'
+        required: true
+      issue_body:
+        description: 'Issue Body'
         required: true
 
 jobs:
