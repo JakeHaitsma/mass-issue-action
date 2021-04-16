@@ -1,0 +1,12 @@
+name: 'Mass Issue Action'
+description: 'Creates an issue on Repositories X,Y,Z (repositories defined in Repository A)'
+author: 'Jacob Haitsma'
+
+inputs:
+  GITHUB_TOKEN:
+    description: 'Github Token'
+    required: true
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
