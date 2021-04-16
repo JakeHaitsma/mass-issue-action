@@ -6046,8 +6046,8 @@ const core = __nccwpck_require__(186);
 const github = __nccwpck_require__(438);
 
 async function run() {
-  const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
-  const octokit = github.getOctokit(GITHUB_TOKEN);
+  const MACHINE_WORKER_TOKEN = core.getInput('MACHINE_WORKER_TOKEN');
+  const octokit = github.getOctokit(MACHINE_WORKER_TOKEN);
   
   const issues = await octokit.paginate(
     "GET /repos/{owner}/{repo}/issues",

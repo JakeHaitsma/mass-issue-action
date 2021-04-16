@@ -3,8 +3,8 @@ description: 'Creates an issue on Repositories X,Y,Z (repositories defined in Re
 author: 'Jacob Haitsma'
 
 inputs:
-  GITHUB_TOKEN:
-    description: 'Github Token'
+  MACHINE_WORKER_TOKEN:
+    description: 'Machine Worker Token'
     required: true
 
 runs:
