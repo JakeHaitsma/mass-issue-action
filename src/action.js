@@ -39,9 +39,10 @@ async function run() {
         title: issueTitle,
         body: issueBody,
       });
-      console.log(`Successfully filed issue on repository "${repo}"`);
+      console.log(`✅ Successfully filed issue on repository "${repo}"`);
     } catch (e) {
-      console.error(`Error creating issue on repository "${repo}"`);
+      console.error(`🚨 Error creating issue on repository "${repo}"`);
+      console.error(e);
     }
   }
 }
