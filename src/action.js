@@ -13,6 +13,7 @@ async function run() {
   const issueTitle = core.getInput('issue_title');
   const issueBody = core.getInput('issue_body');
 
+  // Get octokit w/ key
   const octokit = github.getOctokit(MACHINE_WORKER_TOKEN);
   
   // Get repo content at path
@@ -37,7 +38,7 @@ async function run() {
         owner: REPO_OWNER,
         repo: repo,
         title: issueTitle,
-        body: issueBody,
+        body: issueBody, // supports markdown
       });
       console.log(`✅ Successfully filed issue on repository "${repo}"`);
     } catch (e) {
