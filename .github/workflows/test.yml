@@ -18,3 +18,5 @@ jobs:
       - uses: ./
         with:
           MACHINE_WORKER_TOKEN: ${{secrets.MACHINE_WORKER_TOKEN}}
+          issue_title: ${{ github.events.inputs.issue_title }}
+          issue_body: ${{ github.events.inputs.issue_body }}
