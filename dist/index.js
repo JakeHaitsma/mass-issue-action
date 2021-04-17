@@ -6074,7 +6074,7 @@ async function run() {
       -- Trim .env
       -- Add suffix
      ============================================== */
-  if (!customEnvs.data) throw new Error(`No data at path "${CLIENT_REPO_ENV_PATH}" on repo "${REPO_OWNER}/${CLIENTS_REPO}"`)
+  if (!customEnvsData.data) throw new Error(`No data at path "${CLIENT_REPO_ENV_PATH}" on repo "${REPO_OWNER}/${CLIENTS_REPO}"`)
   const customRepos =
     customEnvsData.data
       .filter((client) => client.endsWith(REPO_FILE_EXTENSION))
