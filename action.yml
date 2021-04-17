@@ -6,6 +6,12 @@ inputs:
   MACHINE_WORKER_TOKEN:
     description: 'Machine Worker Token'
     required: true
+  issue_title:
+    description: 'Title of the issue to be filed'
+    required: true
+  issue_body:
+    description: 'Body of the issue to be filed'
+    required: true
 
 runs:
   using: 'node12'
