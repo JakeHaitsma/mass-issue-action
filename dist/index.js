@@ -6069,7 +6069,7 @@ async function run() {
   });
 
   /* =============================================
-    Create list of repositories to file issues on
+    Create list of repositories on which to file issues
       -- Get the name of each file
       -- Trim .env
       -- Add suffix
