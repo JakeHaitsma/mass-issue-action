@@ -33,7 +33,7 @@ async function run() {
   if (!customEnvsData.data) throw new Error(`No data at path "${CLIENT_REPO_ENV_PATH}" on repo "${REPO_OWNER}/${CLIENTS_REPO}"`)
   const customRepos =
     customEnvsData.data
-      .filter((client) => client.endsWith(REPO_FILE_EXTENSION))
+      .filter((client) => client.name && client.name.endsWith(REPO_FILE_EXTENSION))
       .map((client) => `${client.name.toLowerCase().substr(0, client.name.indexOf(REPO_FILE_EXTENSION))}${REPO_KEY_SUFFIX}`);
 
   console.log(`💬 Filing issue with title "${issueTitle}" and content "${issueBody}" on ${customRepos.length} repositories...`)
