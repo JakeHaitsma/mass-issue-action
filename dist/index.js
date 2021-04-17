@@ -6075,6 +6075,8 @@ async function run() {
      ============================================== */
   const customRepos = customEnvsData.data.map((client) => `${client.name.toLowerCase().substr(0, client.name.indexOf('.env'))}${REPO_KEY_SUFFIX}`);
 
+  console.log(`💬 Filing issue with title "${issueTitle}" and content "${issueBody}"`)
+
   // For each repo, file an issue
   for (const repo of customRepos) {
     try {
