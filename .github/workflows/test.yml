@@ -8,7 +8,7 @@ on:
         required: true
       issue_body:
         description: 'Issue Body'
-        required: true
+        required: false
 
 jobs:
   mass_issue:

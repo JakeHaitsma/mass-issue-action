@@ -12,7 +12,7 @@ async function run() {
   // Inputs
   const MACHINE_WORKER_TOKEN = core.getInput('MACHINE_WORKER_TOKEN');
   const issueTitle = core.getInput('issue_title');
-  const issueBody = core.getInput('issue_body');
+  const issueBody = core.getInput('issue_body') || '';
 
   // Get octokit w/ token
   const octokit = github.getOctokit(MACHINE_WORKER_TOKEN);

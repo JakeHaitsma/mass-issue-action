@@ -11,7 +11,7 @@ inputs:
     required: true
   issue_body:
     description: 'Body of the issue to be filed'
-    required: true
+    required: false
 
 runs:
   using: 'node12'
