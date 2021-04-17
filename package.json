@@ -1,7 +1,7 @@
 {
   "name": "mass-issue-github-actions-test",
   "version": "1.0.0",
-  "description": "",
+  "description": "Creates an issue on Repositories X,Y,Z - repositories defined by (in this case .env) files in Repository A",
   "main": "index.js",
   "scripts": {
     "build": "ncc build src/action.js -o dist",
@@ -12,7 +12,7 @@
     "url": "git+https://github.com/JacobHaitsma/mass-issue-github-actions-test.git"
   },
   "author": "Jacob Haitsma",
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/JacobHaitsma/mass-issue-github-actions-test/issues"
   },
