@@ -2,7 +2,7 @@
 
 ## Installing dependencies
 
-- `yarn install -g ncc` (for build)
+- `yarn install -g @vercel/ncc` (for build)
 - `yarn install`
 
 ## Building
