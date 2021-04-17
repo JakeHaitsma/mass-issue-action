@@ -1,5 +1,5 @@
 name: 'Mass Issue Action'
-description: 'Creates an issue on Repositories X,Y,Z (repositories defined in Repository A)'
+description: 'Creates an issue on Repositories X,Y,Z (repositories defined by (in this case .env) files in Repository A)'
 author: 'Jacob Haitsma'
 
 inputs:
