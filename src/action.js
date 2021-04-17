@@ -4,10 +4,10 @@ const github = require('@actions/github');
 async function run() {
   // Constants
   const REPO_OWNER = 'JacobHaitsma';
-  const REPO_KEY_SUFFIX = '-auctionsoftware';
+  const REPO_KEY_SUFFIX = '-reposuffix';
   const CLIENTS_REPO = 'test-clients-repo';
-  const CLIENTS_REPO_ENV_PATH = 'custom_env';
-  const REPO_FILE_EXTENSION = '.env';
+  const CLIENTS_REPO_ENV_PATH = 'clients-env';
+  const REPO_CLIENT_FILE_EXTENSION = '.env';
 
   // Inputs
   const MACHINE_WORKER_TOKEN = core.getInput('MACHINE_WORKER_TOKEN');
@@ -33,8 +33,8 @@ async function run() {
   if (!customEnvsData.data) throw new Error(`No data at path "${CLIENT_REPO_ENV_PATH}" on repo "${REPO_OWNER}/${CLIENTS_REPO}"`)
   const customRepos =
     customEnvsData.data
-      .filter((client) => client.name && client.name.endsWith(REPO_FILE_EXTENSION))
-      .map((client) => `${client.name.toLowerCase().substr(0, client.name.indexOf(REPO_FILE_EXTENSION))}${REPO_KEY_SUFFIX}`);
+      .filter((client) => client.name && client.name.endsWith(REPO_CLIENT_FILE_EXTENSION))
+      .map((client) => `${client.name.toLowerCase().substr(0, client.name.indexOf(REPO_CLIENT_FILE_EXTENSION))}${REPO_KEY_SUFFIX}`);
 
   console.log(`💬 Filing issue with title "${issueTitle}" and content "${issueBody}" on ${customRepos.length} repositories...`)
 
