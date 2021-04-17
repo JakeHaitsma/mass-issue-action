@@ -6062,6 +6062,7 @@ async function run() {
   const octokit = github.getOctokit(MACHINE_WORKER_TOKEN);
   
   // Get repo content at path
+  console.log(`💬 Gathering repositories...`)
   const customEnvsData = await octokit.repos.getContent({
     owner: REPO_OWNER,
     repo: CLIENTS_REPO,
@@ -6080,7 +6081,7 @@ async function run() {
       .filter((client) => client.name && client.name.endsWith(REPO_CLIENT_FILE_EXTENSION))
       .map((client) => `${client.name.toLowerCase().substr(0, client.name.indexOf(REPO_CLIENT_FILE_EXTENSION))}${REPO_KEY_SUFFIX}`);
 
-  console.log(`💬 Filing issue with title "${issueTitle}" and content "${issueBody}" on ${customRepos.length} repositories...`)
+  console.log(`💬 Filing issue with title "${issueTitle}" and content "${issueBody}" on ${customRepos.length} repositories...`);
 
   // For each repo, file an issue
   for (const repo of customRepos) {
