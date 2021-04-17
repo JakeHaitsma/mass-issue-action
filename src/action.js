@@ -4,9 +4,9 @@ const github = require('@actions/github');
 async function run() {
   // Constants
   const REPO_OWNER = 'JacobHaitsma';
-  const REPO_KEY_SUFFIX = '-reposuffix';
+  const REPO_KEY_SUFFIX = '-auctionsoftware';
   const CLIENTS_REPO = 'test-clients-repo';
-  const CLIENTS_REPO_ENV_PATH = 'clients-env';
+  const CLIENTS_REPO_ENV_PATH = 'custom_env';
   const REPO_CLIENT_FILE_EXTENSION = '.env';
 
   // Inputs
