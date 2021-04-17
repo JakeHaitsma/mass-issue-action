@@ -6057,6 +6057,7 @@ async function run() {
   const issueTitle = core.getInput('issue_title');
   const issueBody = core.getInput('issue_body');
 
+  // Get octokit w/ key
   const octokit = github.getOctokit(MACHINE_WORKER_TOKEN);
   
   // Get repo content at path
@@ -6072,7 +6073,7 @@ async function run() {
       -- Trim .env
       -- Add suffix
      ============================================== */
-  const customRepos = customEnvsData.data.map((client) => `${client.name.toLowerCase().substr(0, client.name.indexOf('.env'))}-${REPO_KEY_SUFFIX}`);
+  const customRepos = customEnvsData.data.map((client) => `${client.name.toLowerCase().substr(0, client.name.indexOf('.env'))}${REPO_KEY_SUFFIX}`);
 
   // For each repo, file an issue
   for (const repo of customRepos) {
@@ -6081,11 +6082,12 @@ async function run() {
         owner: REPO_OWNER,
         repo: repo,
         title: issueTitle,
-        body: issueBody,
+        body: issueBody, // supports markdown
       });
-      console.log(`Successfully filed issue on repository "${repo}"`);
+      console.log(`✅ Successfully filed issue on repository "${repo}"`);
     } catch (e) {
-      console.error(`Error creating issue on repository "${repo}"`);
+      console.error(`🚨 Error creating issue on repository "${repo}"`);
+      console.error(e);
     }
   }
 }
