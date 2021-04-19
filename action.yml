@@ -3,8 +3,11 @@ description: 'Creates an issue on Repositories X,Y,Z (repositories defined by (i
 author: 'Jacob Haitsma'
 
 inputs:
-  MACHINE_WORKER_TOKEN:
-    description: 'Machine Worker Token'
+  USER_ACCESS_TOKEN:
+    description: 'Github User Access Token'
+    required: true
+  actor:
+    description: 'The initiator of the action'
     required: true
   issue_title:
     description: 'Title of the issue to be filed'

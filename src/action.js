@@ -4,18 +4,19 @@ const github = require('@actions/github');
 async function run() {
   // Constants
   const REPO_OWNER = 'JacobHaitsma';
-  const REPO_KEY_SUFFIX = '-reposuffix';
+  const REPO_KEY_SUFFIX = '-auctionsoftware';
   const CLIENTS_REPO = 'test-clients-repo';
-  const CLIENTS_REPO_ENV_PATH = 'clients';
+  const CLIENTS_REPO_ENV_PATH = 'custom_env';
   const REPO_CLIENT_FILE_EXTENSION = '.env';
 
   // Inputs
-  const MACHINE_WORKER_TOKEN = core.getInput('MACHINE_WORKER_TOKEN');
+  const USER_ACCESS_TOKEN = core.getInput('USER_ACCESS_TOKEN');
+  const actor = core.getInput('actor');
   const issueTitle = core.getInput('issue_title');
   const issueBody = core.getInput('issue_body') || '';
 
   // Get octokit w/ token
-  const octokit = github.getOctokit(MACHINE_WORKER_TOKEN);
+  const octokit = github.getOctokit(USER_ACCESS_TOKEN);
   
   // Get repo content at path
   console.log(`💬 Gathering repositories...`)
@@ -46,7 +47,7 @@ async function run() {
         owner: REPO_OWNER,
         repo: repo,
         title: issueTitle,
-        body: issueBody, // supports markdown, line breaks with <br />
+        body: `${issueBody}<br /><br />Issued by "${actor}"`, // supports markdown, line breaks with <br />
       });
       console.log(`✅ Successfully filed issue on repository "${repo}"`);
     } catch (e) {
