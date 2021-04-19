@@ -6048,9 +6048,9 @@ const github = __nccwpck_require__(438);
 async function run() {
   // Constants
   const REPO_OWNER = 'JacobHaitsma';
-  const REPO_KEY_SUFFIX = '-auctionsoftware';
+  const REPO_KEY_SUFFIX = '-proj';
   const CLIENTS_REPO = 'test-clients-repo';
-  const CLIENTS_REPO_ENV_PATH = 'custom_env';
+  const CLIENTS_REPO_ENV_PATH = 'sites';
   const REPO_CLIENT_FILE_EXTENSION = '.env';
 
   // Inputs
